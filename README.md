@@ -12,13 +12,18 @@
 
 <img src="https://github.com/abruno36/AluraFilmes/blob/master/Alura.Filmes.App/Images/ImgPropriedades.png" alt="Entidades"/>
 
+> **Chaves Estrangeiras:** propriedades existentes na classe dependente que guardam o valor da classe principal, podem ser shadow properties.
+>
+>No exemplo abaixo não declaramos uma propriedade explicitamente no código da classe **FilmeAtor**, o que fizemos foi criar uma shadow property para a propriedade actor_id. Feito isso, configuramos o relacionamento utilizando a chave estrangeira actor_id. Fizemos essa configuração utilizando os métodos HasOne(), WithMany() e HasForeignKey().
+
+<img src="https://github.com/abruno36/AluraFilmes/blob/master/Alura.Filmes.App/Images/ImgPropriedades1.png" alt="Entidades"/>
+
 > ## Nível Criticidade
-> - [ ] - Alto  
-> - [x] - Médio  
+> - [x] - Alto  
+> - [ ] - Médio  
 > - [ ] - Baixo  
 >  
 ---
-
 
 
 > ## Tecnologias
