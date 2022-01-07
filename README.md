@@ -30,20 +30,14 @@
 >  
 ---
 
-
 > ## Tecnologias
 >
 > **Frameworks:**  
-> - *.Net CORE 5.0.202 *  
+> - **Entity Framework CORE 4.7 **  
 >
 > **Tipo de Banco de dados:**  
-> - *SQL Server* e *MySql*
->
-> **Dispositivos Específicos:**  
->
-> **Componentes:**  
->  
->   
+> - **SQL Server**
+
 >
 
 ---
