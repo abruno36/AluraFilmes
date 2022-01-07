@@ -1,4 +1,4 @@
-# Aplicação : APP API NetCre DDD (Domain-Driven-Design)  
+# Entity Framework Core parte 1: Mapeando um banco pré-existente  
 
 
 
@@ -6,7 +6,7 @@
 >
 > **Objetivo:**     
 >
-> **Tipo:** *Web*  
+> Fizemos o relacionamento de filmes com atores, ou seja, um relacionamento de cardinalidade N:N (muitos para muitos). Um filme possui um elenco de vários atores e um ator pode atuar em vários filmes. Contudo, o Entity Framework Core não suporta esse tipo de cardinalidade onde criamos uma classe que será responsável pelo relacionamento entre outras duas classes.  
 ---
 
 
