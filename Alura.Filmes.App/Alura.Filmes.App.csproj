@@ -138,6 +138,18 @@
     <Compile Include="Migrations\20220107181919_Idioma.designer.cs">
       <DependentUpon>20220107181919_Idioma.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20220107194714_IndiceAtorUltimoNome.cs" />
+    <Compile Include="Migrations\20220107194714_IndiceAtorUltimoNome.designer.cs">
+      <DependentUpon>20220107194714_IndiceAtorUltimoNome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20220107195658_UniqueAtorPrimeiroUltimoNome.cs" />
+    <Compile Include="Migrations\20220107195658_UniqueAtorPrimeiroUltimoNome.designer.cs">
+      <DependentUpon>20220107195658_UniqueAtorPrimeiroUltimoNome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20220107200728_Classificacao.cs" />
+    <Compile Include="Migrations\20220107200728_Classificacao.designer.cs">
+      <DependentUpon>20220107200728_Classificacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AluraFilmesContextoModelSnapshot.cs" />
     <Compile Include="Negocio\Ator.cs" />
     <Compile Include="Negocio\Filme.cs" />

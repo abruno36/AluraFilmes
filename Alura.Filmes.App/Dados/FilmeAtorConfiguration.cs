@@ -17,7 +17,7 @@ namespace Alura.Filmes.App.Dados
 
             builder.Property<DateTime>("last_update")
             .HasColumnType("datetime")
-            .HasDefaultValueSql("getdate()");
+            .HasDefaultValueSql("CURRENT_TIMESTAMP");
 
             builder.HasKey("film_id", "actor_id");
 

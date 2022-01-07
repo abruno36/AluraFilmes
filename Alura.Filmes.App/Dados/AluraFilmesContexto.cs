@@ -5,14 +5,14 @@ namespace Alura.Filmes.App.Dados
 {
     public class AluraFilmesContexto : DbContext
     {
-        public DbSet<Ator> actor { get; set; }
-        public DbSet<Filme> film { get; set; }
+        public DbSet<Ator> Atores { get; set; }
+        public DbSet<Filme> Filmes { get; set; }
         public DbSet<FilmeAtor> Elenco { get; set; }
         public DbSet<Idioma> Idiomas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB; Initial Catalog=AluraFilmes; Integrated Security=True");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB; Initial Catalog=AluraFilmesTST; Integrated Security=True");
 
       
         }
