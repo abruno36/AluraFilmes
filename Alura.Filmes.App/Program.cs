@@ -2,7 +2,6 @@
 using Alura.Filmes.App.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Linq;
 
 namespace Alura.Filmes.App
 {
@@ -15,13 +14,46 @@ namespace Alura.Filmes.App
             {
                 contexto.LogSQLToConsole();
 
-                var filme = contexto.film
-                    .Include(f => f.Atores)   //inner join
-                    .ThenInclude(fa => fa.Ator)
-                    .First();
+                //var filmes = contexto.film
+                //    .Include(f => f.IdiomaFalado);
 
-                Console.WriteLine(filme);
-                Console.WriteLine("Elenco");
+                //foreach (var filme in filmes)
+                //{
+                //    Console.WriteLine(filme);
+                //    Console.WriteLine(filme.IdiomaFalado);
+                //}
+
+                var idiomas = contexto.Idiomas
+                    .Include(i => i.FilmesFalados);
+
+                //foreach (var idioma in contexto.Idiomas)
+                //{
+                //    Console.WriteLine(idioma);
+                //}
+
+                foreach (var idioma in idiomas)
+                {
+                    Console.WriteLine(idioma);
+
+                    foreach (var filme in idioma.FilmesFalados)
+                    {
+                        Console.WriteLine(filme);
+                    }
+                    Console.WriteLine("\n");
+                }
+
+                //foreach (var idioma in contexto.Idiomas)
+                //{
+                //    Console.WriteLine(idioma);
+                //}
+
+                //var filme = contexto.film
+                //    .Include(f => f.Atores)   //inner join
+                //    .ThenInclude(fa => fa.Ator)
+                //    .First();
+
+                //Console.WriteLine(filme);
+                //Console.WriteLine("Elenco");
 
                 //listar os 10 atores modificados recentemente 
                 //var atores = contexto.actor
@@ -43,10 +75,10 @@ namespace Alura.Filmes.App
                 //    Console.WriteLine($"Filme: {filmId}, Ator: {actorId}, LastUpdate: {lastUpd}");
                 //}
 
-                foreach (var ator in filme.Atores)
-                {
-                    Console.WriteLine(ator.Ator);
-                }
+                //foreach (var ator in filme.Atores)
+                //{
+                //    Console.WriteLine(ator.Ator);
+                //}
             }
         }
     }
