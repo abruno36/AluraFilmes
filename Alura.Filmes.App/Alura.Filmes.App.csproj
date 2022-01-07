@@ -146,6 +146,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\ImgPropriedades.png" />
+    <Content Include="Images\ImgPropriedades1.png" />
+    <Content Include="Images\ImgPropriedades2.png" />
     <Content Include="Scripts\alurafilmes-cargainicial.sql" />
     <Content Include="Scripts\alurafilmes-estrutura.sql" />
   </ItemGroup>

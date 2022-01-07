@@ -18,6 +18,11 @@
 
 <img src="https://github.com/abruno36/AluraFilmes/blob/master/Alura.Filmes.App/Images/ImgPropriedades1.png" alt="Entidades"/>
 
+
+>Aprendemos a convenção o Entity para **chave primária**. A chave primária em uma classe entidade é descoberta detecta a existência de uma propriedade chamada Id ou <nome do tipo>Id. Para configurarmos uma chave primária composta, podemos utilizar o métido HasKey().
+
+<img src="https://github.com/abruno36/AluraFilmes/blob/master/Alura.Filmes.App/Images/ImgPropriedades2.png" alt="Entidades"/>
+
 > ## Nível Criticidade
 > - [x] - Alto  
 > - [ ] - Médio  
