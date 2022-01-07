@@ -1,4 +1,4 @@
-# Entity Framework Core parte 1: Mapeando um banco pré-existente  
+# Entity Framework Core parte 2: Mapeando um banco pré-existente  
 
 > ## Informações
 >
