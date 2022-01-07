@@ -9,7 +9,7 @@
 > Classe Principal: considerada a classe independente da relação.
 > Classe Dependente: classe dependente da relação, ou "classe filha". É nela que reside a chave estrangeira.
 
-<img src="C:\Images\ImgPropriedades.png" alt="Entidades"/>
+<img src="AluraFilmes\Alura.Filmes.App\Images\ImgPropriedades.png" alt="Entidades"/>
 
 > ## Nível Criticidade
 > - [ ] - Alto  
