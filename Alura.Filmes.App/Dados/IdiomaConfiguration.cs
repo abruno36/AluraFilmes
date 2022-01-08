@@ -21,7 +21,7 @@ namespace Alura.Filmes.App.Dados
 
             builder.Property<DateTime>("last_update")
                 .HasColumnType("datetime")
-                .HasDefaultValueSql("getdate()")
+                .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .IsRequired();
 
         }

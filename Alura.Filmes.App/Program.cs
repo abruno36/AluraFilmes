@@ -14,6 +14,18 @@ namespace Alura.Filmes.App
             {
                 contexto.LogSQLToConsole();
 
+                Console.WriteLine("Clientes: ");
+                foreach (var cliente in contexto.Clientes)
+                {
+                    Console.WriteLine(cliente);
+                }
+
+                Console.WriteLine("\nFuncionarios: ");
+                foreach (var func in contexto.Funcionarios)
+                {
+                    Console.WriteLine(func);
+                }
+
                 //var m10 = ClassificacaoIndicativa.MaioresQue18;
                 //Console.WriteLine(m10.ParaString());
                 //Console.WriteLine("G".ParaValor());
@@ -27,20 +39,20 @@ namespace Alura.Filmes.App
                 //    .Where(a => a.PrimeiroNome == "Emma" && a.UltimoNome == "Watson");
                 //Console.WriteLine($"Total de atores encontrados: {emmaWatson.Count()}.");
 
-                var filme = new Filme();
-                var idioma = new Idioma { Nome = "English" }; //quando não existe na tabela Language
-                filme.Titulo = "Cassino Royale";
-                filme.Duracao = 120;
-                filme.AnoLancamento = "2000";
-                filme.Classificacao = ClassificacaoIndicativa.MaioresQue14;
-                filme.IdiomaFalado = contexto.Idiomas.First();
-                contexto.Entry(filme).Property("last_update").CurrentValue = DateTime.Now;
+                //var filme = new Filme();
+                //var idioma = new Idioma { Nome = "English" }; //quando não existe na tabela Language
+                //filme.Titulo = "Cassino Royale";
+                //filme.Duracao = 120;
+                //filme.AnoLancamento = "2000";
+                //filme.Classificacao = ClassificacaoIndicativa.MaioresQue14;
+                //filme.IdiomaFalado = contexto.Idiomas.First();
+                //contexto.Entry(filme).Property("last_update").CurrentValue = DateTime.Now;
 
-                contexto.Filmes.Add(filme);
-                contexto.SaveChanges();
+                //contexto.Filmes.Add(filme);
+                //contexto.SaveChanges();
 
-                var filmeInserido = contexto.Filmes.First(f => f.Titulo == "Cassino Royale");
-                Console.WriteLine(filmeInserido.Classificacao);
+                //var filmeInserido = contexto.Filmes.First(f => f.Titulo == "Cassino Royale");
+                //Console.WriteLine(filmeInserido.Classificacao);
 
             }
         }
