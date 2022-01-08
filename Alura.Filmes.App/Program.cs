@@ -1,8 +1,7 @@
 ﻿using Alura.Filmes.App.Dados;
 using Alura.Filmes.App.Extensions;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Linq;
+using System.Data.SqlClient;
 
 namespace Alura.Filmes.App
 {
@@ -14,21 +13,34 @@ namespace Alura.Filmes.App
             {
                 contexto.LogSQLToConsole();
 
-                // top5_most_starred_actors - view criada no banco legado
+                var sql = "INSERT INTO language (name) VALUES ('Teste 1'), ('Teste 2'), ('Teste 3')";
+                var registros = contexto.Database.ExecuteSqlCommand(sql);
+                System.Console.WriteLine($"Total de registros afetados é: {registros}");
 
-                var sql = @"SELECT a.* FROM actor a
-	                            inner join top5_most_starred_actors
-                                filmes on filmes.actor_id = a.actor_id";
-
-                var atoresMaisAtuantes = contexto.Atores
-                    .FromSql(sql)   //não utilizando o sql automatico do EF e sim no sql montado
-                    .Include(a => a.Filmografia); 
-
-                foreach (var ator in atoresMaisAtuantes)
-                {
-                    Console.WriteLine($"O ator {ator.PrimeiroNome} {ator.UltimoNome} atuou em {ator.Filmografia.Count} filmes");
-                }
+                var deleteSql = "DELETE FROM language WHERE name LIKE 'Teste%'";
+                registros = contexto.Database.ExecuteSqlCommand(deleteSql);
+                System.Console.WriteLine($"O total de registros afetados é {registros}.");
             }
+        }
+
+        static void StoredProcedure(DbContext contexto)
+        {
+            var categ = "Drama"; //33
+
+            var paramCateg = new SqlParameter("category_name", categ);
+
+            var paramTotal = new SqlParameter
+            {
+                ParameterName = "@total_actors",
+                Size = 4,
+                Direction = System.Data.ParameterDirection.Output
+            };
+
+            //para executar uma stored procedure utiliza no contexto.Database
+            contexto.Database
+                  .ExecuteSqlCommand("total_actors_from_given_category @category_name, @total_actors OUT", paramCateg, paramTotal);
+
+            System.Console.WriteLine($"O total de atores na categoria {categ} é de {paramTotal.Value}.");
         }
     }
 }
